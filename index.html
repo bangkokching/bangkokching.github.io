@@ -27,7 +27,7 @@
 --navy:#0c1a33;--navy2:#13274a;--gold:#c99b46;--gold2:#e2be78;--soft:light-dark(#f2ece0,#111d33);
 --card:light-dark(#ffffff,#101c31);--bd:light-dark(#e7dfcf,#22314d);--line:#06c755}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
-*{box-sizing:border-box;min-width:0}
+*{box-sizing:border-box;min-width:0}[hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;overflow-x:clip}
 a{color:inherit}img{display:block;max-width:100%}
@@ -182,6 +182,77 @@ textarea{min-height:110px;resize:vertical}
 .done{display:none;text-align:center;padding:20px 0}
 .done h3{font-size:24px;margin-bottom:8px}.done .cta{justify-content:center}
 @media(max-width:820px){.formwrap{grid-template-columns:1fr}}
+/* company */
+.co{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.co .chip{display:inline-flex;background:#fff;border-radius:14px;padding:12px 18px;border:1px solid var(--bd)}
+.co .chip img{height:44px;width:auto}
+.co .kicker{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.08em;margin:18px 0 8px}
+.co .addr{font-size:15px;color:var(--mute);margin:14px 0 0}
+.co .addr a{color:var(--gold);font-weight:700;text-decoration:none}
+.costats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:28px 8px;box-shadow:0 24px 50px -36px rgba(12,26,51,.5)}
+.cs{text-align:center;padding:0 12px;display:grid;justify-items:center;gap:6px}
+.cs+.cs{border-left:1.5px solid var(--bd)}
+.cs .ring{width:64px;height:64px;margin-bottom:6px}
+.cs b{font-family:"Noto Serif TC",serif;font-size:clamp(28px,3.2vw,40px);line-height:1.1;color:var(--gold)}
+.cs b sup{font-size:.5em;color:var(--gold2);margin-left:2px;vertical-align:.7em}
+.cs span{font-size:15px;color:var(--mute)}
+.co .src{grid-column:1/-1;font-size:13px;color:var(--mute);margin:0}
+@media(max-width:860px){.co{grid-template-columns:1fr}}
+@media(max-width:520px){.costats{grid-template-columns:1fr;padding:12px 20px}.cs{padding:18px 0}.cs+.cs{border-left:0;border-top:1.5px solid var(--bd)}}
+/* after-sale */
+.after{margin-top:40px;border-top:1px solid rgba(201,155,70,.35);padding-top:32px}
+.after h3{font-family:"Noto Serif TC",serif;font-size:clamp(22px,2.6vw,28px);color:var(--gold2)}
+.after .lead{margin-top:6px}
+.asteps{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.asteps li{background:rgba(255,255,255,.05);border:1px solid rgba(201,155,70,.3);border-radius:16px;padding:18px}
+.asteps b{display:block;color:#f3efe6;font-size:17px;margin:6px 0 4px}
+.asteps p{margin:0;color:#c4cbd8;font-size:14px;line-height:1.65}
+.asteps .ico{color:var(--gold2)}
+@media(max-width:900px){.asteps{grid-template-columns:1fr 1fr}}@media(max-width:480px){.asteps{grid-template-columns:1fr}}
+/* developers */
+.devs{margin-top:28px}
+.devs p{margin:0 0 12px;font-size:14px;color:var(--mute);font-weight:500}
+.devrow{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.devrow span{background:#fff;border:1px solid var(--bd);border-radius:14px;aspect-ratio:3/2;display:grid;place-items:center;padding:8px}
+.devrow img{width:100%;height:100%;object-fit:contain}
+/* listings */
+.lsbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px}
+.lsbar select,.lsbar input{font:inherit;font-size:15px;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--bd);background:var(--card);color:var(--ink)}
+.lsbar input{flex:1 1 200px}
+.lscount{font-size:14px;color:var(--mute);margin:14px 0 0}
+.lsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:14px}
+.ls{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:6px;position:relative}
+.ls h3{font-size:18px;padding-right:70px}
+.ls .code{font-size:12px;color:var(--mute);letter-spacing:.04em}
+.ls .price{font-family:"Noto Serif TC",serif;font-size:22px;color:var(--gold);font-weight:900;line-height:1.3}
+.ls .price small{font-family:"Noto Sans TC",sans-serif;font-size:13px;color:var(--mute);font-weight:500;margin-left:4px}
+.ls .facts{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0;padding:0;list-style:none}
+.ls .facts li{font-size:13px;background:var(--soft);border-radius:999px;padding:2px 10px}
+.ls .flag{position:absolute;top:16px;right:16px;font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;background:#1f9d55;color:#fff}
+.ls .flag.p{background:#b7791f}
+.ls .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:12px}
+.ls .acts .btn{min-height:44px;padding:0 16px;font-size:14px}
+.lsmore{margin-top:20px;display:flex;justify-content:center}
+.lsmsg{margin-top:20px;color:var(--mute)}
+/* knowledge */
+.know{background:var(--soft)}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:32px}
+.kq{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.kq .cat{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.06em}
+.kq h3{font-size:19px;line-height:1.45}
+.kq p{margin:0;color:var(--mute);font-size:15px}
+.kq ul{list-style:none;padding:0;margin:auto 0 0;display:grid;gap:8px;border-top:1px solid var(--bd);padding-top:12px}
+.kq a{display:flex;gap:10px;align-items:center;text-decoration:none;font-size:14px;font-weight:500;line-height:1.5}
+.kq a:hover{color:var(--gold)}
+.kq a img{flex:none;width:88px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:var(--soft)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:32px}
+.rev{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px;margin:0;display:flex;flex-direction:column;gap:14px}
+.rev .stars{color:var(--gold);letter-spacing:3px;font-size:15px}
+.rev blockquote{margin:0;font-size:16px;line-height:1.8}
+.rev figcaption{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:700}
+.rev figcaption span{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--gold2);display:grid;place-items:center;font-family:"Noto Serif TC",serif}
+.rev figcaption small{display:block;font-weight:400;color:var(--mute);font-size:13px}
 /* faq */
 details{border-bottom:1px solid var(--bd);padding:16px 0}
 summary{cursor:pointer;font-weight:700;font-size:17px}
@@ -207,7 +278,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="img/mark-light.png" alt=""><span><b>曼谷地產小靖</b><small>BANGKOK CHING</small></span></a>
-  <div class="links"><a href="#about">關於我</a><a href="#services">服務項目</a><a href="#projects">推薦建案</a><a href="#videos">影片</a><a href="#process">合作流程</a><a href="#faq">常見問題</a></div>
+  <div class="links"><a href="#about">關於我</a><a href="#services">服務項目</a><a href="#projects">推薦建案</a><a href="#listings">中古屋・租屋</a><a href="#knowledge">置產知識</a><a href="#reviews">客戶評價</a><a href="#faq">常見問題</a></div>
   <a class="btn b-gold" href="#contact">預約諮詢</a>
 </div></nav>
 
@@ -253,6 +324,22 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   </div>
 </div></section>
 
+<section class="band" id="team" style="padding-top:0"><div class="wrap co">
+  <div>
+    <span class="chip"><img src="https://sichomes.com/wp-content/uploads/2025/09/SIChomes-LOGO.svg" alt="新享物業 SIChomes" loading="lazy"></span>
+    <p class="kicker">泰國在地公司・實體辦公室</p>
+    <h2>小靖隸屬<br>新享物業 SIChomes 團隊</h2>
+    <p class="lead">你面對的不只是一位顧問。新享物業是曼谷在地的房地產公司，團隊以泰、英、中三語服務國際客戶，買賣、出租、代管與裝修都由同一個團隊處理，簽約後也找得到人。</p>
+    <p class="addr">辦公室：2034/72 Italthai Tower 15F, New Phetchaburi Rd, Bangkok<br><a href="https://sichomes.com/" target="_blank" rel="noopener">前往新享物業官網</a></p>
+  </div>
+  <div class="costats" aria-label="新享物業團隊實績">
+    <div class="cs"><span class="ring"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/><circle cx="4.5" cy="10" r="2"/><path d="M1.5 19v-1a3 3 0 0 1 4-2.8"/><circle cx="19.5" cy="10" r="2"/><path d="M22.5 19v-1a3 3 0 0 0-4-2.8"/></svg></span><b>4,215<sup>+</sup></b><span>成功交易</span></div>
+    <div class="cs"><span class="ring"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V4h8v17M13 21V9h6v12"/><path d="M8 8h2M8 12h2M8 16h2M16 13h0M16 17h0"/></svg></span><b>417<sup>+</sup></b><span>管理中的物業</span></div>
+    <div class="cs"><span class="ring"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h6M7 13h4"/><circle cx="17" cy="10" r="2"/><path d="M16 12l-1 5 2-1 2 1-1-5"/></svg></span><b>8<sup>+</sup></b><span>行業經驗年限</span></div>
+  </div>
+  <p class="src">實績數字為新享物業 SIChomes 團隊整體成績。</p>
+</div></section>
+
 <section class="band dark" id="services"><div class="wrap">
   <h2>六大服務，一條龍到底</h2>
   <p class="lead">從第一次了解泰國房產，到成為安心收租的房東，每一步都有人在曼谷幫你處理。</p>
@@ -260,11 +347,22 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
     <div class="svcimg"><img src="img/services.jpg" alt="曼谷地產小靖服務：購買房產、驗屋、交屋、二手出售、出租代管、裝潢代購" loading="lazy"></div>
     <div class="svcgrid" id="svc"></div>
   </div>
+  <div class="after">
+    <h3>買完之後，有人接手</h3>
+    <p class="lead">人不在曼谷也能安心當房東。交屋後由新享物業的在地團隊接手出租與管理，每一步都會回報給你。</p>
+    <ol class="asteps">
+      <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="8" r="4"/><path d="M3 21a7 7 0 0 1 11-5.7M16 19l2 2 4-4"/></svg></span><b>租客招募與篩選</b><p>刊登、帶看並篩選租客背景，挑選穩定可靠的承租人。</p></li>
+      <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><b>合約與租金管理</b><p>擬定租約、收取押金與每月租金，處理續約與退租點交。</p></li>
+      <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/></svg></span><b>定期檢查與回報</b><p>定期巡檢房況、安排維修，並把狀況回報給遠在台灣的你。</p></li>
+      <li><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 18v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M2 18h20M6 10V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/></svg></span><b>裝潢設計提升租金</b><p>依目標租客規劃裝潢與軟裝，讓房子更好租、租得更好。</p></li>
+    </ol>
+  </div>
 </div></section>
 
 <section class="band" id="projects"><div class="wrap">
   <div class="row"><div><h2>推薦建案</h2><p class="lead">小靖實地看過、親自篩選的曼谷建案。點選建案看重點介紹，也可以免費索取完整建案簡介。</p></div>
   <a class="btn b-line" href="https://line.me/R/ti/p/@bkkhouse" target="_blank" rel="noopener">LINE 詢問最新建案</a></div>
+  <div class="devs"><p>合作開發商</p><div class="devrow"><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Sansiri-Developer-150x150.webp" alt="Sansiri" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/AP-Developer-150x150.webp" alt="AP" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Noble-Developer-150x150.webp" alt="Noble" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Ananda-Developer-150x150.webp" alt="Ananda" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Supalai-Developer-150x150.webp" alt="Supalai" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/MQDC-Developer-150x150.webp" alt="MQDC" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Asset-Wise-Developer-150x150.webp" alt="Asset Wise" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Origin-Developer-150x150.webp" alt="Origin" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/SC-Asset-Developer-150x150.webp" alt="SC Asset" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Pruksa-Developer-150x150.webp" alt="Pruksa" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Real-Asset-Developer-150x150.webp" alt="Real Asset" loading="lazy" width="150" height="150"></span><span><img src="https://sichomes.com/wp-content/uploads/2025/09/Raimon-Land-Developer-150x150.webp" alt="Raimon Land" loading="lazy" width="150" height="150"></span></div></div>
   <div class="filters" role="group" aria-label="篩選建案"><button type="button" data-f="all" aria-pressed="true">全部</button><button type="button" data-f="pre" aria-pressed="false">預售</button><button type="button" data-f="done" aria-pressed="false">已完工</button></div>
   <div class="projs" id="projs"></div>
   <p class="note">價格與戶數會隨銷售狀況變動，實際以建商最新報價為準。</p>
@@ -275,6 +373,28 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   <h2>買泰國房之前，你該先知道的事</h2>
   <p class="lead">這些是客戶最常問、也是我在影片裡反覆提醒的重點。每一點都有完整影片可以看。</p>
   <div class="grid" id="truth"></div>
+</div></section>
+
+<section class="band" id="listings"><div class="wrap">
+  <div class="row"><div><h2>中古屋・租屋物件</h2><p class="lead">新享物業團隊經手的曼谷二手屋與出租物件，資料與公司物件表同步更新。看中哪一間，按「LINE 詢問」傳物件編號給我就好。</p></div>
+  <a class="btn b-line" href="https://line.me/R/ti/p/@bkkhouse" target="_blank" rel="noopener">LINE 請小靖幫我找</a></div>
+  <div class="filters" role="group" aria-label="出售或出租" id="ls-mode"><button type="button" data-m="sale" aria-pressed="true">出售</button><button type="button" data-m="rent" aria-pressed="false">出租</button></div>
+  <div class="lsbar">
+    <label class="sr" for="ls-q" style="position:absolute;left:-9999px">搜尋</label><input id="ls-q" type="search" placeholder="搜尋社區名稱或物件編號">
+    <select id="ls-area" aria-label="區域"><option value="">全部區域</option></select>
+    <select id="ls-type" aria-label="房型"><option value="">全部房型</option></select>
+    <select id="ls-sort" aria-label="排序"><option value="">預設排序</option><option value="lo">價格低到高</option><option value="hi">價格高到低</option><option value="big">坪數大到小</option></select>
+  </div>
+  <p class="lscount" id="ls-count" aria-live="polite">物件載入中…</p>
+  <div class="lsgrid" id="ls-grid"></div>
+  <div class="lsmore"><button class="btn b-ghost" type="button" id="ls-more" hidden>顯示更多物件</button></div>
+  <p class="note">價格與狀態以實際洽詢為準。1 平方米約 0.3025 坪。</p>
+</div></section>
+
+<section class="band know" id="knowledge"><div class="wrap">
+  <h2>置產知識</h2>
+  <p class="lead">台灣人到曼谷買房最常問的問題，我都拍成影片講清楚了。先看懂規則，再決定要不要買。</p>
+  <div class="kgrid" id="kgrid"></div>
 </div></section>
 
 <section class="band" id="videos"><div class="wrap">
@@ -293,6 +413,12 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
     <li><h3>簽約、驗屋、交屋</h3><p>協助議價、匯款與過戶，交屋前專業驗屋。</p></li>
     <li><h3>裝潢與代管</h3><p>裝潢代購、招租收租與維護，安心做房東。</p></li>
   </ol>
+</div></section>
+
+<section class="band" id="reviews" style="padding-top:0"><div class="wrap">
+  <h2>客戶怎麼說</h2>
+  <p class="lead">以下是新享物業 SIChomes 團隊客戶的真實評價。</p>
+  <div class="revs" id="revs"></div>
 </div></section>
 
 <section class="band dark" id="contact"><div class="wrap formwrap">
@@ -356,7 +482,8 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   </ul></div>
   <div><h3>聯絡資訊</h3><ul>
     <li>sean31sean31@gmail.com</li>
-    <li>2034 Phetchaburi Rd, Bang Kapi, Huai Khwang, Bangkok</li>
+    <li>新享物業 SIChomes<br>2034/72 Italthai Tower 15F, New Phetchaburi Rd, Bangkok</li>
+    <li><a href="https://sichomes.com/" target="_blank" rel="noopener">新享物業官網</a></li>
     <li><a href="#contact">填寫諮詢報名表</a></li>
   </ul></div>
 </div>
@@ -386,7 +513,10 @@ const projs=[
  {id:'nue-rama9',m:'!1m18!1m12!1m3!1d3875.368882490035!2d100.55848537462346!3d13.756614386635674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f0078c573c5%3A0x1f26692d5eacddc9!2z4LiZ4Li04LinIOC4reC4teC4m-C4tOC4hCDguK3guYLguKjguIEt4Lie4Lij4Liw4Lij4Liy4LihIDk!5e0!3m2!1szh-TW!2sth!4v1795696466047!5m2!1szh-TW!2sth',mq:'Nue Epic Asok-Rama 9',b:'拉瑪九新 CBD，MRT 步行6分鐘，單價每平方米12.8萬泰銖，未來再添橘線。',k:'索取建案資料：諾博尚璽',n:'諾博尚璽 Nue Epic Asok-Rama 9',st:'pre',price:'350 萬泰銖起',area:'Rama 9 拉瑪九',dev:'Noble 諾博地產',d:'位處 Rama 9 拉瑪九核心地帶，距離 MRT Rama 9 地鐵站 450 公尺，走路只要 6 分鐘。周邊新開發案與橘線地鐵陸續到位，該區域已一戶難求。',h:['MRT Rama 9 站步行 6 分鐘','以單價每平方米 12.8 萬泰銖推出','鄰近未來橘線泰國文化中心站'],sp:[['開發商','Noble 諾博地產'],['基地','約 2-0-95.6 萊'],['總戶數','3,107 戶住宅＋9 店面'],['坪數','30 – 100.8 平方米（1–3 房）'],['預計完工','2028 年 7 月']],g:['img/projects/g/nue-1.jpg'],v:'',img:'img/projects/nue-rama9.jpg'},
  {id:'life-rama4-asoke',m:'!1m18!1m12!1m3!1d3875.9823427924566!2d100.55960727462241!3d13.719518786668871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f6cb5c99e71%3A0x8fe949ad89401729!2sLife%20Rama%204%20-%20Asoke!5e0!3m2!1szh-TW!2sth!4v1795696484062!5m2!1szh-TW!2sth',mq:'Life Rama 4 - Asoke',b:'AP 與日本三菱地所合建，鄰 One Bangkok，MRT 450 公尺，已完工。',k:'索取建案資料：Life Rama4-Asoke',n:'Life Rama4-Asoke',st:'done',price:'459 萬泰銖起',area:'Rama 4 新商業區',dev:'AP × 三菱地所',d:'位於曼谷新商業區 Rama 4 拉瑪四路，MRT 詩麗吉國際會議中心站 1 號出口 450 公尺，與 One Bangkok、Dusit Central Park 為鄰，南向可看河景與森林公園。',h:['MRT 詩麗吉會議中心站 450 公尺','鄰近 One Bangkok、Dusit Central Park','南向河景、北向市區公園景'],sp:[['開發商','AP Thailand 與日本三菱地所合作'],['產權','永久產權'],['規模','1 棟 39 層'],['總戶數','1,237 戶＋2 店面'],['坪數','26.5 – 75 平方米（含挑高 Vertiplex）']],g:['img/projects/g/life-2.jpg','img/projects/g/life-1.jpg'],v:'',img:'img/projects/life-card.jpg'},
  {id:'valles-haus',m:'!1m18!1m12!1m3!1d3876.04220659448!2d100.60032387462222!3d13.71589358667205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f000e99cf49%3A0xb25fc6ad5682945e!2svalles%20HAUS!5e0!3m2!1szh-TW!2sth!4v1795696518609!5m2!1szh-TW!2sth',mq:'valles HAUS Bangkok',b:'Sansiri 總部 T77 社區低密度寵物宅，7層庭園建築，2027年交屋。',k:'索取建案資料：Valles Haus',n:'Valles Haus',st:'pre',price:'440 萬泰銖起',area:'Onnut 安努／T77 社區',dev:'Sansiri',d:'位在泰國前三大建商 Sansiri 總部所在的獨立社區 T77，距離 BTS Onnut 安努站不遠。7 層低密度建築環繞森林庭園與泳池，在曼谷市區也能擁有離囂不離城的生活。',h:['Sansiri 總部 T77 獨立社區','7 層低密度、庭園泳池環繞','多款寵物友善戶型'],sp:[['開發商','Sansiri'],['基地','約 6-4-11.5 萊'],['規模','3 棟 7 層低層建築'],['總戶數','408 戶'],['坪數','33.75 – 90.25 平方米（1–3 房）'],['預計完工','2027 年 1 月']],g:['img/projects/g/valles-1.jpg','img/projects/g/valles-3.jpg','img/projects/g/valles-2.jpg'],v:'',img:'img/projects/valles-haus.jpg'},
- {id:'klos-ratchada7',m:'!1m18!1m12!1m3!1d3875.1349144319283!2d100.56826467462393!3d13.770736486623239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f006a8e8539%3A0xa2143fedd9937df7!2sKLOS%20Ratchada%207!5e0!3m2!1szh-TW!2sth!4v1795696535884!5m2!1szh-TW!2sth',mq:'KLOS Ratchada 7',b:'藍、橘雙線捷運交匯，BIG C 僅70公尺，低層抗震設計，已完工可收租。',k:'索取建案資料：KLOS Ratchada 7',n:'KLOS Ratchada 7 近悅',st:'done',price:'359 萬泰銖',area:'Ratchada 泰國文化中心',dev:'Frasers Property 星獅地產',d:'泰國文化中心站，MRT 藍線與橘線雙軌交匯；BIG C 百貨超市只要 70 公尺，走路 7 分鐘到 24 小時營業的 Street Ratchada。低層抗震設計，住得更安心。',h:['MRT 藍線、橘線雙軌交匯','BIG C 百貨超市 70 公尺','低層抗震：地基深 25 公尺入硬沙層'],sp:[['開發商','Frasers Property 星獅地產'],['建築高度','地上 23 公尺低層建築'],['結構','RC 加固結構、L 型平面'],['地基','深 25 公尺，深入硬沙層'],['安全','每層 16 戶、3 條逃生路線']],g:['img/projects/g/klos-1.jpg','img/projects/g/klos-2.jpg'],v:'',img:'img/projects/klos-ratchada7.jpg'}];
+ {id:'klos-ratchada7',m:'!1m18!1m12!1m3!1d3875.1349144319283!2d100.56826467462393!3d13.770736486623239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f006a8e8539%3A0xa2143fedd9937df7!2sKLOS%20Ratchada%207!5e0!3m2!1szh-TW!2sth!4v1795696535884!5m2!1szh-TW!2sth',mq:'KLOS Ratchada 7',b:'藍、橘雙線捷運交匯，BIG C 僅70公尺，低層抗震設計，已完工可收租。',k:'索取建案資料：KLOS Ratchada 7',n:'KLOS Ratchada 7 近悅',st:'done',price:'359 萬泰銖',area:'Ratchada 泰國文化中心',dev:'Frasers Property 星獅地產',d:'泰國文化中心站，MRT 藍線與橘線雙軌交匯；BIG C 百貨超市只要 70 公尺，走路 7 分鐘到 24 小時營業的 Street Ratchada。低層抗震設計，住得更安心。',h:['MRT 藍線、橘線雙軌交匯','BIG C 百貨超市 70 公尺','低層抗震：地基深 25 公尺入硬沙層'],sp:[['開發商','Frasers Property 星獅地產'],['建築高度','地上 23 公尺低層建築'],['結構','RC 加固結構、L 型平面'],['地基','深 25 公尺，深入硬沙層'],['安全','每層 16 戶、3 條逃生路線']],g:['img/projects/g/klos-1.jpg','img/projects/g/klos-2.jpg'],v:'',img:'img/projects/klos-ratchada7.jpg'},
+ {"id": "life-ratchada-rama9", "m": "https://maps.google.com/maps?q=Life+Ratchada-Rama+9+AP+Thailand+Bangkok&z=15&hl=zh-TW&output=embed", "mq": "Life Ratchada - Rama 9", "b": "AP 拉瑪九新 CBD 低層宅，距 MRT 750 公尺，步行到 Central Rama 9。", "k": "索取建案資料：Life Ratchada-Rama 9", "n": "Life Ratchada-Rama 9", "st": "pre", "price": "約 389 萬泰銖起", "area": "Rama 9 新 CBD／Ratchada", "dev": "AP Thailand", "d": "AP Thailand 在 Rama 9 新 CBD 推出的低層住宅，主打高隱私與大面積綠化公設。距 MRT Phra Ram 9 與 Thailand Cultural Centre 約 750 公尺，Fortune Town、Central Rama 9 都在步行範圍。", "h": ["MRT Phra Ram 9／泰國文化中心站約 750 公尺", "Central Rama 9 約 650 公尺、Fortune Town 約 600 公尺", "8 層低密度社區，附家具交屋（Fully Fitted）"], "sp": [["開發商", "AP Thailand"], ["基地", "約 8-1-62.7 萊"], ["規模", "5 棟，住宅樓 8 層"], ["總戶數", "851 戶住宅＋1 店面"], ["坪數", "28 – 60 平方米"], ["房型", "1 房、1 房 Plus、2 房"]], "g": ["https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9-1920x800-1.webp", "https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9_Facilities_-7-1.webp", "https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9_Facilities_-8-1.webp", "https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9_Facilities_-1-1.webp", "https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9_Master-plan.webp"], "img": "https://sichomes.com/wp-content/uploads/2026/07/Life-Ratchada-Rama9-1920x800-1.webp"},
+ {"id": "love-charoen-nakhon", "m": "https://maps.google.com/maps?q=LOVE+Charoen+Nakhon+Sansiri+Bangkok&z=15&hl=zh-TW&output=embed", "mq": "LOVE Charoen Nakhon", "b": "Sansiri 與三井不動產合建，正面湄南河景，寵物友善，鄰 ICONSIAM。", "k": "索取建案資料：LOVE Charoen Nakhon", "n": "LOVE Charoen Nakhon", "st": "pre", "price": "339 萬泰銖起（河景戶）", "area": "Charoen Nakhon 河岸／近 ICONSIAM", "dev": "Sansiri × Mitsui Fudosan", "d": "Sansiri 全新品牌 LOVE 的第一個建案，與日本三井不動產合作開發，正面俯瞰昭披耶河。距 ICONSIAM 約 1.7 公里，設有寵物公園與寵物友善樓層，另有 4.7 米挑高 Loft 戶型。城市景觀戶約 239 萬泰銖起。", "h": ["正面湄南河景，7 樓與 37 樓雙泳池", "Pets Welcome：專屬寵物公園與寵物樓層", "ICONSIAM 約 1.7 公里、Asiatique 約 2 公里"], "sp": [["開發商", "Sansiri × Mitsui Fudosan"], ["規模", "A 棟 44 層、B 棟 7 層"], ["總戶數", "1,111 戶"], ["坪數", "25.75 – 168.75 平方米"], ["房型", "1–3 房、4.7 米挑高 Loft"], ["交通", "BTS Krung Thon Buri 約 1.5 公里"]], "g": ["https://sichomes.com/wp-content/uploads/2026/05/HERO-RIVERFRONT_FINAL.webp", "https://sichomes.com/wp-content/uploads/2026/05/HERO-TAKSIN-BRIDGE_FINAL.webp", "https://sichomes.com/wp-content/uploads/2026/05/INT_LOBBY_GARDEN_FINAL.webp", "https://sichomes.com/wp-content/uploads/2026/05/LAP-POOL-7-FL_FINAL.webp", "https://sichomes.com/wp-content/uploads/2026/05/SWIMMING-POOL-FL37_FINAL.webp", "https://sichomes.com/wp-content/uploads/2026/05/LOVE-Charoen-Nakhon_Masterplan.webp"], "img": "https://sichomes.com/wp-content/uploads/2026/02/Love-Chareon-Nakhon.webp"},
+ {"id": "life-udomsuk-station", "m": "https://maps.google.com/maps?q=Life+Udomsuk+Station+Sukhumvit+103+Bangkok&z=15&hl=zh-TW&output=embed", "mq": "Life Udomsuk Station", "b": "AP 打造，BTS Udomsuk 僅 100 公尺，鄰 Bangkok Mall 等大型開發。", "k": "索取建案資料：Life Udomsuk", "n": "Life Udomsuk Station", "st": "pre", "price": "1 房約 399 萬泰銖起", "area": "Udomsuk／Bangna", "dev": "AP Thailand", "d": "AP Thailand 在 Sukhumvit 103 推出的 38 層高樓，距 BTS Udomsuk 僅 100 公尺。周邊有 Bangkok Mall、True Digital Park、BITEC 等大型開發，公設面積超過 6,000 平方米。", "h": ["BTS Udomsuk 100 公尺，到 Thonglor、Asoke 約 15–20 分鐘", "Bangkok Mall、True Digital Park 帶動租賃需求", "5 大主題公設區，超過 6,000 平方米"], "sp": [["開發商", "AP Thailand"], ["基地", "約 4-1-78.2 萊"], ["規模", "38 層高樓"], ["總戶數", "約 1,004 戶＋1 店面"], ["坪數", "28 – 63 平方米"], ["預計完工", "2027 年"]], "g": ["https://sichomes.com/wp-content/uploads/2026/02/Life-Udomsuk-Station-1280x800-1-1024x640.webp", "https://sichomes.com/wp-content/uploads/2025/10/Life-Udomsuk-Station-Project-Perspective-01-2-1024x640.webp", "https://sichomes.com/wp-content/uploads/2025/10/Life-Udomsuk-Project-Location-Map-1024x640.webp"], "img": "https://sichomes.com/wp-content/uploads/2026/02/Life-Udomsuk-Station-1280x800-1-1024x640.webp"}];
 const MAPE='https://www.google.com/maps/embed?pb=',MAPO=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
 const esc=x=>String(x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const stl={pre:'預售',done:'已完工'};
@@ -399,7 +529,7 @@ const dlg=document.getElementById('pd');
 const openP=id=>{const p=projs.find(x=>x.id===id);if(!p)return;
  const gl=p.g&&p.g.length?p.g:(p.img?[p.img]:[]);
  document.getElementById('pd-img').innerHTML=(gl.length?`<div class="gal" id="gal">${gl.map((u,i)=>`<img src="${esc(u)}" alt="${esc(p.n)} 圖 ${i+1}">`).join('')}</div>`:pic(p))+`<span class="st ${p.st}">${stl[p.st]}</span>`+(gl.length>1?`<div class="gnav"><button type="button" data-g="-1" aria-label="上一張">‹</button><button type="button" data-g="1" aria-label="下一張">›</button></div>`:'');
- document.getElementById('pd-b').innerHTML=`<h3 id="pd-t" style="font-size:26px;font-family:'Noto Serif TC',serif">${esc(p.n)}</h3><p class="price" style="margin:0">${esc(p.price)}</p>${p.m?`<a class="vlink" href="#pd-map" data-tomap style="color:var(--gold);font-weight:700;text-decoration:none">查看地圖位置 ↓</a>`:''}<p style="margin:0;color:var(--mute)">${esc(p.d)}</p><ul class="hl">${p.h.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${p.m?`<div class="map" id="pd-map"><h4>建案位置</h4><iframe src="${MAPE+p.m}" title="${esc(p.n)} 地圖" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="vlink" href="${MAPO(p.mq)}" target="_blank" rel="noopener">在 Google 地圖開啟（導航、街景）</a></div>`:''}${p.sp?`<dl class="specs">${p.sp.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`:''}${p.v?`<a class="card-link" style="color:var(--gold);font-weight:700;text-decoration:none" href="https://www.youtube.com/watch?v=${esc(p.v)}" target="_blank" rel="noopener">看小靖實地開箱影片</a>`:''}<div class="gate"><b>想看完整價目表、格局圖與付款方式？</b><p style="margin:6px 0 12px;font-size:15px;color:var(--mute)">加 LINE 免費索取完整建案簡介，或直接預約一對一看屋諮詢。</p><div class="cta" style="margin:0"><a class="btn b-line" href="${LINEMSG(p.k)}" target="_blank" rel="noopener">LINE 索取完整資料</a><a class="btn b-gold" href="#contact" data-proj="${esc(p.n)}">預約看屋</a></div></div>`;
+ document.getElementById('pd-b').innerHTML=`<h3 id="pd-t" style="font-size:26px;font-family:'Noto Serif TC',serif">${esc(p.n)}</h3><p class="price" style="margin:0">${esc(p.price)}</p>${p.m?`<a class="vlink" href="#pd-map" data-tomap style="color:var(--gold);font-weight:700;text-decoration:none">查看地圖位置 ↓</a>`:''}<p style="margin:0;color:var(--mute)">${esc(p.d)}</p><ul class="hl">${p.h.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${p.m?`<div class="map" id="pd-map"><h4>建案位置</h4><iframe src="${p.m.startsWith('http')?p.m:MAPE+p.m}" title="${esc(p.n)} 地圖" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><a class="vlink" href="${MAPO(p.mq)}" target="_blank" rel="noopener">在 Google 地圖開啟（導航、街景）</a></div>`:''}${p.sp?`<dl class="specs">${p.sp.map(([a,b])=>`<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl>`:''}${p.v?`<a class="card-link" style="color:var(--gold);font-weight:700;text-decoration:none" href="https://www.youtube.com/watch?v=${esc(p.v)}" target="_blank" rel="noopener">看小靖實地開箱影片</a>`:''}<div class="gate"><b>想看完整價目表、格局圖與付款方式？</b><p style="margin:6px 0 12px;font-size:15px;color:var(--mute)">加 LINE 免費索取完整建案簡介，或直接預約一對一看屋諮詢。</p><div class="cta" style="margin:0"><a class="btn b-line" href="${LINEMSG(p.k)}" target="_blank" rel="noopener">LINE 索取完整資料</a><a class="btn b-gold" href="#contact" data-proj="${esc(p.n)}">預約看屋</a></div></div>`;
  if(!dlg.open){if(dlg.showModal)dlg.showModal();else dlg.setAttribute('open','')}
  if(location.hash!=='#p-'+id)history.replaceState(null,'','#p-'+id)};
 pg.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o)openP(o.dataset.open)});
@@ -439,6 +569,55 @@ document.getElementById('qs').innerHTML=qs.map(q=>{
  const ty=q.m?'checkbox':'radio',opts=q.s?['1','2','3','4','5']:q.o;
  const box=opts.map(o=>`<label class="opt"><input type="${ty}" name="entry.${q.e}" value="${o}"><span>${o}</span></label>`).join('');
  return `<fieldset class="${q.s?'scale':''}" data-e="${q.e}"><legend>${q.t} <span class="req">*</span>${q.h?` <span class="hint">${q.h}</span>`:''}</legend><div class="opts">${box}</div>${q.s?`<div class="ends"><span>1 ${q.s[0]}</span><span>5 ${q.s[1]}</span></div>`:''}</fieldset>`}).join('');
+
+const ytt=id=>`https://i.ytimg.com/vi/${id}/mqdefault.jpg`;
+const know=[
+ ['規則','台灣人可以在泰國買房嗎？','可以。外國人能以自己名義持有公寓（Condominium）永久產權，但整棟外國人持有面積不得超過 49%，購屋款也必須從海外匯入。土地與透天另有限制。',[['dckP_yH8ajE','2026 泰國買房真相！先知道這 5 件事'],['aqf9a1yuYZc','買之前先問自己這 6 個問題']]],
+ ['流程','買曼谷公寓要注意哪些步驟與費用？','從選案、訂金、簽約、海外匯款到過戶交屋，每一步都有文件與費用要確認。最常見的坑是被層層加價，所以先學會查底價。',[['iKbf0sXuaiI','外國人買房當盤子？自保查底價 3 招'],['4QRHYleGJB4','在泰國買房竟遇到惡意加價轉賣']]],
+ ['收租','曼谷買房收租，實際報酬有多少？','帳面租金不等於實拿。管理費、稅費、空租期、家具折舊都要算進去，才知道真正的淨報酬。',[['NTY4T1nPfa8','收租真的能躺賺？扣掉所有成本還剩多少']]],
+ ['區域','2026 年曼谷哪些區值得買？','房價上漲但供給減少，不同區域的走勢正在分化。選對區域，比選對建案更重要。',[['VMS9pVQKMc4','2026 曼谷房市大洗牌：哪些區越漲越兇'],['KQdOBMSPKss','房價漲 78%、建商少蓋 67% 的真相'],['9zLfw2O8n-w','Central GR9 千億計畫直擊']]],
+ ['出場','買了之後，賣得掉嗎？','二手套房轉手不容易。買進之前就要想好出場方式，挑對戶型、樓層與社區。',[['wuvKdzgojvU','套房想賣賣不掉？安全下車 3 大關鍵']]],
+ ['移居','想移居曼谷，簽證和生活費怎麼算？','長居簽證規定近年有變動，買房與簽證不一定能綁在一起。生活開銷也比多數人想像的更有彈性。',[['mZ5LcNOex_Q','300 萬泰銖買房拿長居？2026 新規定'],['qd2qvVDUSOk','新手移居泰國必避的 5 大雷區'],['VQpBtzhq61Y','月花 4 萬台幣的曼谷真實開銷']]]];
+document.getElementById('kgrid').innerHTML=know.map(([c,q,a,v])=>`<article class="kq"><span class="cat">${c}</span><h3>${q}</h3><p>${a}</p><ul>${v.map(([id,t])=>`<li><a href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener"><img src="${ytt(id)}" alt="" loading="lazy">${t}</a></li>`).join('')}</ul></article>`).join('');
+
+const revs=[
+ ['Eric Chen','購屋＋代管','近期找SIC買了第一間曼谷的房產，未來也打算交由他們專業的團隊代為管理。他們服務細膩，說明詳細也很有耐心，讓我省去不少做功課的時間與心力，安心了不少'],
+ ['Hsiu-Hua Chang','購屋','服務非常好，從一開始我們看房到購買房屋，全程協助我們買到理想的房子，謝謝'],
+ ['Chenina Chen','裝修','整個團隊讓我非常安心，專業與效率讓人無話可說，而且價格透明與團隊施工系統非常有效率，很值得投資海外得每位你們來試試。'],
+ ['Oliva Li','代租管','曼谷專業代租管公司，除了裝潢軟裝很到位，出租效率高，值得信賴的好團隊！'],
+ ['Steven Liow','出租代管','Been using SIC for a couple of years to lease my properties. Their service has been excellent. Responsive, attentive, and accommdating.. Make things really easy for a foreign investor.']];
+document.getElementById('revs').innerHTML=revs.map(([n,t,q])=>`<figure class="rev"><span class="stars" aria-label="五星評價">★★★★★</span><blockquote>${esc(q)}</blockquote><figcaption><span aria-hidden="true">${esc(n[0])}</span><div>${esc(n)}<small>${t}</small></div></figcaption></figure>`).join('');
+
+/* listings: live from the company listing sheet (gid 0 = rent, 1250657676 = sale) */
+{
+const SHEET='1Ge0EZTBJZLOGC6FzoX4pUQcmpNg7Dze3bkppj3FldO4',GID={sale:'1250657676',rent:'0'};
+const csv=t=>{const out=[];let r=[],f='',q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===','){r.push(f);f=''}else if(c==='\n'){r.push(f);out.push(r);r=[];f=''}else if(c!=='\r')f+=c}if(f||r.length){r.push(f);out.push(r)}return out};
+const TY={Studio:'套房',Duplex:'樓中樓'};
+const ty=t=>{t=t.trim();if(TY[t])return TY[t];const m=t.match(/^(\d)B(\d)B(.*)$/i);return m?`${m[1]} 房 ${m[2]} 衛${/combined/i.test(m[3])?'（合併戶）':''}`:t};
+const num=p=>+String(p).replace(/[^\d.]/g,'')||0;
+const wan=n=>n>=1e4?(n/1e4).toLocaleString('zh-TW',{maximumFractionDigits:1})+' 萬':n.toLocaleString();
+const data={},el=id=>document.getElementById(id);
+let mode='sale',shown=12;
+const load=async m=>{if(data[m])return data[m];
+ const t=await (await fetch(`https://docs.google.com/spreadsheets/d/${SHEET}/gviz/tq?tqx=out:csv&gid=${GID[m]}`)).text();
+ const [h,...rows]=csv(t);const ix=k=>h.findIndex(x=>x.trim().toLowerCase()===k.toLowerCase());
+ const I={o:ix('Objective'),s:ix('Management'),c:ix('SIC CODE'),n:ix('Condo Project'),f:ix('Fl'),z:ix('Size'),p:ix('Price'),t:ix('Type'),a:ix('Area'),l:ix('Link Pic'),d:ix('Check-Out_Date')};
+ return data[m]=rows.filter(r=>r[I.n]&&r[I.p]&&/^(available|pending)$/i.test((r[I.s]||'').trim())).map(r=>({code:r[I.c].trim(),n:r[I.n].trim(),fl:(r[I.f]||'').trim(),size:+r[I.z]||0,price:num(r[I.p]),type:ty(r[I.t]||''),area:(r[I.a]||'').trim(),pic:/^https:\/\//.test(r[I.l]||'')?r[I.l].trim():'',pend:/pending/i.test(r[I.s]),date:I.d>=0?(r[I.d]||'').trim():''}))};
+const opts=(sel,vals,lab)=>{const cur=sel.value;sel.innerHTML=`<option value="">${lab}</option>`+[...new Set(vals)].filter(Boolean).sort().map(v=>`<option${v===cur?' selected':''}>${esc(v)}</option>`).join('')};
+const draw=()=>{const L=data[mode]||[];const q=el('ls-q').value.trim().toLowerCase(),a=el('ls-area').value,t=el('ls-type').value,so=el('ls-sort').value;
+ let r=L.filter(x=>(!q||(x.n+' '+x.code).toLowerCase().includes(q))&&(!a||x.area.split(/\s*,\s*/).includes(a))&&(!t||x.type===t));
+ if(so==='lo')r.sort((x,y)=>x.price-y.price);else if(so==='hi')r.sort((x,y)=>y.price-x.price);else if(so==='big')r.sort((x,y)=>y.size-x.size);
+ el('ls-count').textContent=`共 ${r.length} 間${mode==='sale'?'出售':'出租'}物件`;
+ el('ls-grid').innerHTML=r.slice(0,shown).map(x=>`<article class="ls">${x.pend?`<span class="flag p">洽談中</span>`:`<span class="flag">可${mode==='sale'?'購買':'承租'}</span>`}<span class="code">物件編號 ${esc(x.code)}</span><h3>${esc(x.n)}</h3><p class="price" style="margin:0">${mode==='sale'?`${wan(x.price)}泰銖<small>฿${x.price.toLocaleString()}</small>`:`฿${x.price.toLocaleString()}<small>／月</small>`}</p><ul class="facts">${x.area?`<li>${esc(x.area)}</li>`:''}${x.type?`<li>${esc(x.type)}</li>`:''}${x.size?`<li>${x.size} ㎡（約 ${(x.size*.3025).toFixed(1)} 坪）</li>`:''}${x.fl?`<li>${esc(x.fl)} 樓</li>`:''}${x.pend&&x.date?`<li>${esc(x.date)} 後可入住</li>`:''}</ul><div class="acts">${x.pic?`<a class="btn b-ghost" href="${esc(x.pic)}" target="_blank" rel="noopener">看照片</a>`:''}<a class="btn b-line" href="${LINEMSG('詢問物件：'+x.code)}" target="_blank" rel="noopener">LINE 詢問</a></div></article>`).join('');
+ el('ls-more').hidden=r.length<=shown};
+const go=async()=>{shown=12;el('ls-count').textContent='物件載入中…';el('ls-grid').innerHTML='';
+ try{const L=await load(mode);opts(el('ls-area'),L.flatMap(x=>x.area.split(/\s*,\s*/)),'全部區域');opts(el('ls-type'),L.map(x=>x.type),'全部房型');draw()}
+ catch(e){el('ls-count').innerHTML='物件清單暫時無法載入，請直接 <a href="https://line.me/R/ti/p/@bkkhouse" target="_blank" rel="noopener" style="color:var(--gold);font-weight:700">LINE 詢問小靖</a>。'}};
+el('ls-mode').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.dataset.m===mode)return;mode=b.dataset.m;el('ls-mode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));el('ls-area').value='';el('ls-type').value='';go()});
+['ls-q','ls-area','ls-type','ls-sort'].forEach(id=>el(id).addEventListener(id==='ls-q'?'input':'change',()=>{shown=12;draw()}));
+el('ls-more').addEventListener('click',()=>{shown+=12;draw()});
+const io=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){io.disconnect();go()}},{rootMargin:'400px'});io.observe(el('listings'));
+}
 
 const faqs=[
  ['外國人可以在泰國買房嗎？','可以。外國人可以用自己的名字持有公寓（Condominium）產權，前提是該棟公寓的外國人持有比例未超過法定上限，且購屋款項需從海外匯入泰國。透天與土地的規定不同，諮詢時我會依你的情況說明。'],
