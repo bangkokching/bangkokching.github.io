@@ -234,6 +234,14 @@ textarea{min-height:110px;resize:vertical}
 .ls .acts .btn{min-height:44px;padding:0 16px;font-size:14px}
 .lsmore{margin-top:20px;display:flex;justify-content:center}
 .lsmsg{margin-top:20px;color:var(--mute)}
+/* blog */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:32px}
+.bpost{display:flex;flex-direction:column;gap:8px;text-decoration:none;background:var(--card);border:1px solid var(--bd);border-radius:18px;overflow:hidden;padding-bottom:18px}
+.bpost:hover{border-color:var(--gold)}.bpost:hover h3{color:var(--gold)}
+.bth{display:block;aspect-ratio:16/9;background:var(--soft)}.bth img{width:100%;height:100%;object-fit:cover}
+.bcat{margin:6px 18px 0;font-size:13px;font-weight:700;color:var(--gold)}
+.bpost h3{margin:0 18px;font-size:18px;line-height:1.5}
+.bpost p{margin:0 18px;color:var(--mute);font-size:14px;line-height:1.7;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 /* knowledge */
 .know{background:var(--soft)}
 .kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-top:32px}
@@ -278,7 +286,7 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
 
 <nav><div class="wrap">
   <a class="brand" href="#top"><img src="img/mark-light.png" alt=""><span><b>曼谷地產小靖</b><small>BANGKOK CHING</small></span></a>
-  <div class="links"><a href="#about">關於我</a><a href="#services">服務項目</a><a href="#projects">推薦建案</a><a href="#listings">中古屋・租屋</a><a href="#knowledge">置產知識</a><a href="#reviews">客戶評價</a><a href="#faq">常見問題</a></div>
+  <div class="links"><a href="#about">關於我</a><a href="#services">服務項目</a><a href="#projects">推薦建案</a><a href="#listings">中古屋・租屋</a><a href="#knowledge">置產知識</a><a href="#blog">小靖專欄</a><a href="#faq">常見問題</a></div>
   <a class="btn b-gold" href="#contact">預約諮詢</a>
 </div></nav>
 
@@ -389,6 +397,12 @@ footer a{text-decoration:none}footer a:hover{text-decoration:underline}
   <div class="lsgrid" id="ls-grid"></div>
   <div class="lsmore"><button class="btn b-ghost" type="button" id="ls-more" hidden>顯示更多物件</button></div>
   <p class="note">價格與狀態以實際洽詢為準。1 平方米約 0.3025 坪。</p>
+</div></section>
+
+<section class="band" id="blog"><div class="wrap">
+  <div class="row"><div><h2>小靖專欄</h2><p class="lead">把影片裡的重點整理成文章，買房前慢慢看、隨時查。</p></div>
+  <a class="btn b-ghost" href="blog/">看全部文章</a></div>
+  <div class="bgrid"><a class="bpost" href="blog/check-bangkok-condo-real-price.html"><span class="bth"><img src="https://i.ytimg.com/vi/iKbf0sXuaiI/mqdefault.jpg" alt="" loading="lazy"></span><span class="bcat">流程</span><h3>外國人買房當盤子？揭開仲介加價內幕與自保查底價 3 招</h3><p>在泰國買房怎麼知道有沒有被加價？小靖揭開二手轉售加價、AB 合約、保證租金的手法，並示範用官方估價、DDproperty 等網站查真實行情，以及看懂建商合約與權狀。</p></a><a class="bpost" href="blog/bangkok-resale-exit.html"><span class="bth"><img src="https://i.ytimg.com/vi/wuvKdzgojvU/mqdefault.jpg" alt="" loading="lazy"></span><span class="bcat">出場</span><h3>套房想賣賣不掉？曼谷二手屋安全下車的 3 大關鍵</h3><p>曼谷房子不是租不出去，而是想賣的時候沒人接。小靖從代管 400 多套房屋的經驗，整理二手屋轉手最致命的盲點、泰國人會買的房子，以及出場成本怎麼算。</p></a><a class="bpost" href="blog/thailand-relocation-5-pitfalls.html"><span class="bth"><img src="https://i.ytimg.com/vi/qd2qvVDUSOk/mqdefault.jpg" alt="" loading="lazy"></span><span class="bcat">移居</span><h3>新手移居泰國必避的 5 大雷區：長居簽證與買房一次看懂</h3><p>想移居曼谷，不是買張機票、買間套房就能搬過來。小靖拆解簽證、保關服務、外國人份額、外匯證明與保證投報 5 大雷區，教你合法合規在泰國生活與置產。</p></a><a class="bpost" href="blog/aspire-sukhumvit-rama4-review.html"><span class="bth"><img src="https://i.ytimg.com/vi/SCwusYCP1Zg/mqdefault.jpg" alt="" loading="lazy"></span><span class="bcat">建案開箱</span><h3>總價 200 多萬泰銖入主市中心？Aspire Sukhumvit-Rama 4 實地看屋</h3><p>Aspire Sukhumvit-Rama 4 是 AP Thailand 的成屋建案，BTS Phra Khanong 步行約 10 分鐘。小靖實地走訪，分析租金行情、周邊生活機能、公設與頂樓河景，以及為什麼值得推薦。</p></a><a class="bpost" href="blog/buy-thailand-property-5-things.html"><span class="bth"><img src="https://i.ytimg.com/vi/dckP_yH8ajE/mqdefault.jpg" alt="" loading="lazy"></span><span class="bcat">買房規則</span><h3>2026 泰國買房真相：先知道這 5 件事再出手</h3><p>保證回酬、外匯證明、只看價格、算錯成本、買完才開始。小靖整理 2026 年外國人在泰國買房最容易踩的 5 大地雷，幫你少走冤枉路。</p></a></div>
 </div></section>
 
 <section class="band know" id="knowledge"><div class="wrap">
